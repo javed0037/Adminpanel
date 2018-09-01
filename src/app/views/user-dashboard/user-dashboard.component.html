@@ -1,0 +1,305 @@
+<app-header></app-header>
+
+    <div class="userListPage ExplorerListPage">
+        <div class="layout-content">
+            <div class="layout-content-body">
+                <div class="title-bar">
+                    <h1 class="title-bar-title">
+                      <span class="d-ib">User management</span>
+                    </h1>
+                </div>
+                <div class="row gutter-xs mb-20">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="form-group">
+                          <a routerLink="/add-user" class="btn btn-default btn-sm btn-labeled" type="button">
+                          <span class="btn-label">
+                           <span class="icon icon-plus icon-lg icon-fw"></span>
+                          </span>
+                          Add new user
+                          </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gutter-xs">
+                    <div class="col-xs-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-actions">
+                                    <button type="button" class="card-action card-toggler" title="Collapse"></button>
+                                    <button type="button" class="card-action card-reload" title="Reload"></button>
+
+                                </div>
+                                <strong>User list</strong>
+                            </div>
+                            <div class="card-body">
+                                <table id="demo-datatables-5" class="table table-striped table-bordered table-wrap dataTable" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr. No.</th>
+                                            <th>Name</th>
+                                            <th>Image</th>
+                                            <th>Email</th>
+                                            <th>DOB</th>
+                                            <th>View full detail</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>User name1</td>
+                                            <td>event pdf</td>
+                                            <td>newuser@gmail.com</td>
+                                            <td>14-08-1996</td>
+                                            <td>
+                                              <button class="btn btn-info btn-sm btn-labeled" type="button" data-toggle="modal" data-target="#viewDetail">
+                                                <span class="btn-label">
+                                                 <span class="icon icon-eye icon-lg icon-fw"></span>
+                                                </span>
+                                                  View
+                                              </button>
+                                            </td>
+                                            <td class="">
+                                                <button class="btn btn-danger btn-sm btn-labeled" type="button" data-toggle="modal" data-target="#BlockUser">
+                                                    <span class="btn-label">
+                                                     <span class="icon icon-bank icon-lg icon-fw"></span>
+                                                    </span>
+                                                    Block
+                                                </button>
+                                                <button class="btn btn-success btn-sm btn-labeled" type="button"  data-toggle="modal" data-target="#UnBlockUser">
+                                                    <span class="btn-label">
+                                                     <span class="icon icon-edit icon-lg icon-fw"></span>
+                                                    </span>
+                                                    Un-block
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<app-footer></app-footer>
+    <div id="viewDetail" tabindex="-1" role="dialog" class="modal fade">
+     <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-primary">
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">×</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title">User detail</h4>
+          </div>
+          <div class="modal-body provider-detail">
+           <div class="row">
+           <div class="col-md-12">
+            <div class="col-md-3 text-center">
+              <img src="assets/img/certificate.jpg" class="img-responsive">
+            </div>
+            <div class="col-md-3 text-center">
+              <a href="assets/img/certificate.jpg"><img src="img/certificate.jpg" class="img-responsive"></a>
+            </div>
+            <div class="col-md-3 text-center">
+              <a href="assets/img/certificate.jpg"><img src="img/certificate.jpg" class="img-responsive"></a>
+            </div>
+            <div class="col-md-3 text-center">
+              <a href="assets/img/certificate.jpg"><img src="img/certificate.jpg" class="img-responsive"></a>
+            </div>
+            </div>
+           </div>
+           <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <div class="timeline">
+                    <div class="timeline-item">
+                      <div class="timeline-segment">
+                        <span class="timeline-divider"></span>
+                      </div>
+                      <div class="timeline-content"></div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-segment">
+                        <img class="timeline-media img-circle" width="40" height="40" src="assets/img/8244439665.jpg" alt="Harry Jones">
+                      </div>
+                      <div class="timeline-content">
+                        <div class="timeline-row"><a href="#">Name</a></div>
+                        <div class="timeline-row">Name demo 1</div>
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-segment">
+                        <img class="timeline-media img-circle" width="40" height="40" src="assets/img/8244439665.jpg" alt="Teddy Wilson">
+                      </div>
+                      <div class="timeline-content">
+                        <div class="timeline-row"><a href="#">Email</a></div>
+                        <div class="timeline-row">Email demo1</div>
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-segment">
+                        <img class="timeline-media img-circle" width="40" height="40" src="assets/img/8244439665.jpg" alt="Daniel Taylor">
+                      </div>
+                      <div class="timeline-content">
+                        <div class="timeline-row"><a href="#">D.O.B</a></div>
+                        <div class="timeline-row">16-06-1998</div>
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-segment">
+                        <img class="timeline-media img-circle" width="40" height="40" src="assets/img/8244439665.jpg" alt="Teddy Wilson">
+                      </div>
+                      <div class="timeline-content">
+                        <div class="timeline-row"><a href="#">Gender</a></div>
+                        <div class="timeline-row">Male</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <div class="timeline">
+                    <div class="timeline-item">
+                      <div class="timeline-segment">
+                        <span class="timeline-divider"></span>
+                      </div>
+                      <div class="timeline-content"></div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-segment">
+                        <img class="timeline-media img-circle" width="40" height="40" src="assets/img/8244439665.jpg" alt="Harry Jones">
+                      </div>
+                      <div class="timeline-content">
+                        <div class="timeline-row"><a href="#">Country</a></div>
+                        <div class="timeline-row">Demo country</div>
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-segment">
+                        <img class="timeline-media img-circle" width="40" height="40" src="assets/img/8244439665.jpg" alt="Teddy Wilson">
+                      </div>
+                      <div class="timeline-content">
+                        <div class="timeline-row"><a href="#">State </a></div>
+                        <div class="timeline-row">State demo1</div>
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-segment">
+                        <img class="timeline-media img-circle" width="40" height="40" src="img/8244439665.jpg" alt="Daniel Taylor">
+                      </div>
+                      <div class="timeline-content">
+                        <div class="timeline-row"><a href="#">City</a></div>
+                        <div class="timeline-row">City demo1</div>
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-segment">
+                        <img class="timeline-media img-circle" width="40" height="40" src="assets/img/8244439665.jpg" alt="Teddy Wilson">
+                      </div>                      <div class="timeline-content">
+                        <div class="timeline-row"><a href="#">Occupation</a></div>
+                        <div class="timeline-row">demo 123</div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="timeline">
+                    <div class="timeline-item">
+                      <div class="timeline-segment">
+                        <span class="timeline-divider"></span>
+                      </div>
+                      <div class="timeline-content"></div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-segment">
+                        <img class="timeline-media img-circle" width="40" height="40" src="assets/img/8244439665.jpg" alt="Harry Jones">
+                      </div>
+                      <div class="timeline-content">
+                        <div class="timeline-row"><a href="#">About me</a></div>
+                        <div class="timeline-row">Lorem ipsum is the dummy content for the testing and checking.</div>
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-segment">
+                        <img class="timeline-media img-circle" width="40" height="40" src="assets/img/8244439665.jpg" alt="Teddy Wilson">
+                      </div>
+                      <div class="timeline-content">
+                        <div class="timeline-row"><a href="#">Description</a></div>
+                        <div class="timeline-row">Lorem ipsum is the dummy content for the testing and checking.Lorem ipsum is the dummy content for the testing and checking.Lorem ipsum is the dummy content for the testing and checking.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>      
+    </div>
+    <div id="BlockUser" tabindex="-1" role="dialog" class="modal fade">
+     <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">×</span>
+              <span class="sr-only">Close</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="text-center">
+              <span class="text-danger icon icon-times-circle icon-5x"></span>
+              <h3 class="text-danger">Danger</h3>
+              <h4>Are you want to block this item</h4>
+              <div class="m-t-lg">
+                <button class="btn btn-danger" data-dismiss="modal" type="button">Continue</button>
+                <button class="btn btn-default" data-dismiss="modal" type="button">Cancel</button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>      
+    </div>
+
+    <div id="UnBlockUser" tabindex="-1" role="dialog" class="modal fade">
+     <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">×</span>
+              <span class="sr-only">Close</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="text-center">
+              <span class="text-info icon icon-check-circle icon-5x"></span>
+              <h3 class="text-info">Info</h3>
+              <h4>Are you want to unblock this item</h4>
+              <div class="m-t-lg">
+                <button class="btn btn-info" data-dismiss="modal" type="button">Continue</button>
+                <button class="btn btn-default" data-dismiss="modal" type="button">Cancel</button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>      
+    </div>

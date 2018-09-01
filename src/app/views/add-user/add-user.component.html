@@ -1,0 +1,137 @@
+<app-header></app-header>
+<div class="userListPage"></div>
+<div class="layout-content">
+    <div class="layout-content-body">
+        <div class="title-bar">
+
+            <h1 class="title-bar-title">
+              <span class="d-ib">Add user /</span>
+              <a href="user-account.php">Back to list</a>
+            </h1>
+            <p class="title-bar-description">
+                <small>Welcome to Jonurlong</small>
+            </p>
+        </div>
+        <div class="row gutter-xs">
+            <div class="addUserBox card panel-body  " id="">
+                <div class="col-sm-12 col-md-12">
+                    <div class="demo-form-wrapper">
+                        <form class="form form-horizontal">
+                            <div class="form-group">
+                             <div class="col-md-6">
+                              <label for="" class=" control-label">Name</label>
+                              <input id="" class="form-control" type="text">
+                             </div>
+                             <div class="col-md-6">
+                              <label for="" class=" control-label">Email</label>
+                              <input id="" class="form-control" type="text">
+                             </div>
+                            </div>
+                            <div class="form-group">
+                             <div class="col-md-12 add-gallery">
+                              <label for="" class=" control-label">Add Images</label>
+                              <div class="plus-btn"></div>
+                               <div class="gal-box">
+                                 <div class="gal-img">
+                                  <div class="img-view">
+                                   <img src="assets/images/gallery/chair.jpg" class="gal-result">
+                                  </div>
+                                  <input type="file" class="gal-file">
+                                  <div class="del">x</div>
+                                 </div>
+                               </div>
+                             </div>
+                            </div>
+                             <div class="form-group">
+                             <div class="col-md-6">
+                              <label for="" class=" control-label">Occupation</label>
+                              <input id="" class="form-control" type="text">
+                             </div>
+                             <div class="col-md-6">
+                              <label for="" class=" control-label">Gender</label>
+                              <select class="form-control" name="">
+                                <option value="">Select Gender...</option>
+                                <option value="">Male</option>
+                                <option value="">Female</option>
+                              </select>
+                             </div>
+                            </div>
+                            <div class="form-group">
+                             <div class="col-md-6">
+                              <label for="" class=" control-label">D.O.B</label>
+                              <input id="" class="form-control" type="date">
+                             </div>
+                             <div class="col-md-6">
+                              <label for="" class=" control-label">City</label>
+                              <input id="" class="form-control" type="text">
+                             </div>
+                            </div>
+                             <div class="form-group">
+                             <div class="col-md-6">
+                              <label for="" class=" control-label">State</label>
+                              <input id="" class="form-control" type="text">
+                             </div>
+                             <div class="col-md-6">
+                              <label for="" class=" control-label">Country</label>
+                              <input id="" class="form-control" type="text">
+                             </div>
+                            </div>
+                            <div class="form-group">
+                             <div class="col-md-12">
+                              <label for="" class=" control-label">About me</label>
+                              <input id="" class="form-control" type="text">
+                             </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-md-12">
+                                <label for="about" class=" control-label">Description</label>
+                                <textarea id="" class="form-control" rows="2"></textarea>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                                <div class=" col-sm-8  col-md-8 ">
+                                    <button class="btn btn-primary " type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>
+<script type="text/javascript">
+              $(document).ready(function(){
+               function readURL(input) {
+                  if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                      $(this).parent('.gal-img').find('.gal-result').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                  }
+                }
+
+                $(document).on("change",".gal-file",function() {
+                  readURL(this);
+                });
+               $(document).on("click",".add-gallery .plus-btn",function() {
+                $('.add-gallery .gal-box').append('\
+                  <div class="gal-img">\
+                  <div class="img-view">\
+                  <img src="assets/images/gallery/chair.jpg" class="gal-result">\
+                  </div>\
+                  <input type="file" class="gal-file">\
+                  <div class="del">x</div>\
+                </div>');
+                  $(".del").on('click',function(){
+                    $(this).parent('.gal-img').remove();
+                  });
+              });
+            });
+            </script>

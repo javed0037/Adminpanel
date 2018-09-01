@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  
+	  <!-- Required meta tags -->
+	  
+	<meta charset="utf-8">
+<!-- 	
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">user-scalable=no"> -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#2c3e50">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,700">
+    <link rel="stylesheet" href="./assets/css/vendor.min.css">
+    <link rel="stylesheet" href="./assets/css/elephant.min.css">
+    <link rel="stylesheet" href="./assets/css/application.min.css">
+    <link rel="stylesheet" href="./assets/css/profile.min.css">
+    <link rel="stylesheet" href="./assets/css/product.min.css">
+    <link rel="stylesheet" href="./assets/css/demo.min.css">
+     <link rel="stylesheet" href="./assets/css/style.css">
+     <link rel="stylesheet" href="./assets/fonts/font-awesome/css/font-awesome.min.css">
+ 
+	 <meta charset="UTF-8">
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	 <title>Jonurlong</title>
+	 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+	 <link rel="stylesheet" href="./assets/css/application.min.css">
+	 <link rel="stylesheet" href="./assets/css/login-2.min.css">
+</head>
+ 
+
+<app-root></app-root>
+
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/vendor.min.js"></script>
+    <script src="./assets/js/elephant.min.js"></script>
+    <script src="./aasets/js/application.min.js"></script>
+    <script src="./assets/js/profile.min.js"></script>
+     <script src="./assets/js/demo.min.js"></script>
+    <script type="text/javascript">
+    $(window).load(function(){
+
+      // For Driver Page
+      if ( $('.profilePage').length ) {
+        $('.sidenav-item').removeClass("active");
+        $('.profilePageNav').addClass("active");
+      }
+      if ( $('.dashboardPage').length ) {
+        $('.sidenav-item').removeClass("active");
+        $('.dashboardPageNav').addClass("active");
+      }
+       
+      
+      if ( $('.userListPage').length ) {
+        $('.sidenav-item').removeClass("active");
+        $('.accNav-a').addClass("active");
+        $('.accountNav').addClass("open");
+        $('.accountNav ul').css("display","block");
+      }
+      if ( $('.serviceProviderPage').length ) {
+        $('.sidenav-item').removeClass("active");
+        $('.accNav-b').addClass("active");
+        $('.accountNav').addClass("open");
+        $('.accountNav ul').css("display","block");
+      }
+       if ( $('.webUserPage').length ) {
+        $('.sidenav-item').removeClass("active");
+        $('.webNav-a').addClass("active");
+        $('.webNav').addClass("open");
+        $('.webNav ul').css("display","block");
+      }
+      if ( $('.webProviderPage').length ) {
+        $('.sidenav-item').removeClass("active");
+        $('.webNav-b').addClass("active");
+        $('.webNav').addClass("open");
+        $('.webNav ul').css("display","block");
+      }
+      if ( $('.blogCatPage').length ) {
+        $('.sidenav-item').removeClass("active");
+        $('.blogNav-a').addClass("active");
+        $('.blogNav').addClass("open");
+        $('.blogNav ul').css("display","block");
+      }
+      if ( $('.blogListPage').length ) {
+        $('.sidenav-item').removeClass("active");
+        $('.blogNav-b').addClass("active");
+        $('.blogNav').addClass("open");
+        $('.blogNav ul').css("display","block");
+      }
+      if ( $('.exhibitionCity').length ) {
+        $('.sidenav-item').removeClass("active");
+        $('.exhibitionNav-a').addClass("active");
+        $('.exhibitionNav').addClass("open");
+        $('.exhibitionNav ul').css("display","block");
+      }
+      if ( $('.exhibitionList').length ) {
+        $('.sidenav-item').removeClass("active");
+        $('.exhibitionNav-b').addClass("active");
+        $('.exhibitionNav').addClass("open");
+        $('.exhibitionNav ul').css("display","block");
+      }
+      
+
+     
+
+
+      
+     
+    });
+            $(window).scroll(function (){
+                var window_top = $(window).scrollTop();
+                var div_top = $('.tabs-new').position().top;
+                console.log(window_top);
+                console.log(div_top);
+                if (window_top > div_top) {
+                    $('.tabs-new').addClass('stick');
+                    $('.tabs-new').parents('.layout-content-body').removeClass('layout-content-body').addClass('layout-content-body-dummy');
+                } else {
+                    $('.tabs-new').parents('.layout-content-body').removeClass('layout-content-body-dummy').addClass('layout-content-body')
+                }
+                if ( window_top < 74 ) {
+                  $('.tabs-new').removeClass('stick');
+                }
+            });
+
+    </script>
+ 
+</body>
+</html>
