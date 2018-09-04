@@ -38,36 +38,28 @@ export class LoginComponent implements OnInit {
        
       }); 
     }
-      
-     
-    
       onLoginsubmit() {
-        this.processing = true; 
+        this.processing = true;
         // this.enableForm(); // Re-enable form
-      
         const user = {
-          email: this.form.get('email').value, 
+          email: this.form.get('email').value,
           password: this.form.get('password').value ,
         }
-          
         this.authService
           .login(user)
           .subscribe(data => {
- console.log(data.token)
-                  this.messageClass = 'alert alert-success'; 
-                  this.message = data.message; 
-                  this.authService.storeUserData(data.token, data.data);
+       console.log(data.data._id,"theeeeeeeeeeeeee")
+                  this.messageClass = 'alert alert-success';
+                  this.message = data.message;
+                  this.authService.storeUserData(data.data._id);
                   setTimeout(() => {
                     if (this.previousUrl) {
-                      this.router.navigate([this.previousUrl]); 
+                      this.router.navigate([this.previousUrl]);
                     } else {
                       this.router.navigate(['/dashboard']);
                     }
                   }, 1000);
-            
-              
             }, error=> {
-              
 let err= JSON.parse(error._body).message;
 
        if(error) this.message = error['message'];

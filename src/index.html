@@ -13,6 +13,7 @@
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#2c3e50">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/vendor.min.css">
     <link rel="stylesheet" href="./assets/css/elephant.min.css">
     <link rel="stylesheet" href="./assets/css/application.min.css">
@@ -104,7 +105,19 @@
       }
       
 
-     
+      $(document).on("click",".add-gallery .plus-btn",function() {
+    $('.add-gallery .gal-box').append('\
+      <div class="gal-img">\
+      <div class="img-view">\
+      <img src="assets/images/gallery/chair.jpg" class="gal-result">\
+      </div>\
+      <input type="file" class="gal-file">\
+      <div class="del">x</div>\
+    </div>');
+      $(".del").on('click',function(){
+        $(this).parent('.gal-img').remove();
+      });
+  });
 
 
       
