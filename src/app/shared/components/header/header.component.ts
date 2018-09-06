@@ -19,6 +19,7 @@ name;
   
 logout(){
     this.authservice.logout();
+    this.router.navigate(['/login'])
 }
 
   ngOnInit() {

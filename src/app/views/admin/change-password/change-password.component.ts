@@ -15,8 +15,8 @@ export class ChangePasswordComponent implements OnInit {
    form: FormGroup;
    previousUrl;
    public loading = false;
-  constructor(
-    private formBuilder: FormBuilder,
+   constructor(
+     private formBuilder: FormBuilder,
      private authService: AuthService,
      private router: Router,
   )

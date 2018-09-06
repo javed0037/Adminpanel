@@ -21,6 +21,8 @@ import { ChangePasswordComponent } from './views/admin/change-password/change-pa
 import { UserDashboardComponent } from './views/user-dashboard/user-dashboard.component';
 import { AddUserComponent } from './views/add-user/add-user.component';
 import { AuthService } from './services/admin/admin.service';
+import { LayoutComponent } from './views/layout/layout.component';
+import { SideBarComponent } from './shared/components/side-bar/side-bar.component';
 
 // import { LoadingModule,ANIMATION_TYPES } from 'ngx-loading';
 @NgModule({
@@ -35,6 +37,8 @@ import { AuthService } from './services/admin/admin.service';
     ForgotPasswordComponent,
     UserDashboardComponent,
     AddUserComponent,
+    LayoutComponent,
+    SideBarComponent,
 
  
     // CustomerGroupComponent,

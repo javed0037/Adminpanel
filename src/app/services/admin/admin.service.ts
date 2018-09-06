@@ -1,4 +1,4 @@
-//import { environment } from './../../../environments/environment.prod';
+// import { environment } from './../../../environments/environment.prod';
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
@@ -38,7 +38,7 @@ export class AuthService {
  console.log(user)
   let headers = new Headers();
   this.createAuthenticationHeaders();
-  return this.http.post('http://localhost:3000/admin/adminLogin',user,this.options).pipe(map(res => res.json()));
+  return this.http.post(environment.baseUrl+'/admin/adminLogin',user,this.options).pipe(map(res => res.json()));
 }
 
 
@@ -47,29 +47,40 @@ export class AuthService {
 editProfile(formData) {
  
   this.createAuthenticationHeaders(); // Create headers
-  return this.http.post('http://localhost:3000/admin/addNewUser',formData, this.options).pipe(map(res => res.json()));
+  return this.http.post(environment.baseUrl+'/admin/addNewUser', formData, this.options).pipe(map(res => res.json()));
+  
 }
 
 changepassword(user) {
-  console.log(user,"erfbejhrgbWWWWWWWWWWWWWWWWW")
+  // console.log(user,"erfbejhrgbWWWWWWWWWWWWWWWWW")
   this.createAuthenticationHeaders();
-  return this.http.post('http://localhost:3000/dashboard/changePassword',user, this.options).pipe(map(res => res.json()));
+  return this.http.post(environment.baseUrl+'/dashboard/changePassword',user, this.options).pipe(map(res => res.json()));
 }
 
  forgotpassword(user) {
 console.log(user,"erfbejhrgb")
     this.createAuthenticationHeaders();
-    return this.http.post('http://localhost:3000/admin/forgotPassword',user, this.options).pipe(map(res => res.json()));
+    return this.http.post(environment.baseUrl+'/admin/forgotPassword',user, this.options).pipe(map(res => res.json()));
   }
   
  //  // Function to logout
   logout() {
-    this.authToken = null; // Set token to null
-    this.user = null; // Set user to null
     localStorage.clear(); // Clear local storage
   }
 
+  setToken(token){
+    localStorage.setItem('LoggedInUser',token);
+  }
 
+  isLoggedIn(){
+
+    if(localStorage.getItem('LoggedInUser')){
+       return true;
+    }
+    else
+      return false;
+
+  }
 
   // Function to store user's data in client local storage
   storeUserData(user) {

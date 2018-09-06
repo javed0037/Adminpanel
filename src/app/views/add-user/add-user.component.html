@@ -1,4 +1,4 @@
-<app-header></app-header>
+ <app-header></app-header>
 
 
 <div class="userListPage"></div>
@@ -18,7 +18,7 @@
             <div class="addUserBox card panel-body  " id="">
                 <div class="col-sm-12 col-md-12">
                     <div class="demo-form-wrapper">
-                        <form [formGroup]="form" class="form form-horizontal">
+                        <form [formGroup]="form" class="form form-horizontal">class="layout layout-header-fixed"
                             <div class="form-group">
                              <div class="col-md-6">
                               <label for="" class=" control-label">Name</label>
@@ -30,15 +30,15 @@
                              </div>
                             </div>
                             <div class="form-group">
-                             <div class="col-md-12 add-gallery">
+                             <div class="col-md-12 add-gallery">login
                               <label for="" class=" control-label">Add Images</label>
-                              <div class="plus-btn"></div>
+                              <div (click)="incrementUploadView()" class="plus-btn"></div>
                                <div class="gal-box">
-                                 <div class="gal-img">
+                                 <div *ngFor="let i of fileContainers"  class="gal-img">
                                   <div class="img-view">
                                    <img src="assets/images/gallery/chair.jpg" class="gal-result">
                                   </div>
-                                  <input (change)="found($event)" type="file" class="gal-file">
+                                  <input multiple (change)="found($event)" type="file" class="gal-file">
                                   <div class="del">x</div>
                                  </div>
                                </div>
@@ -92,7 +92,9 @@
                             </div>
                             <div class="form-group">
                                 <div class=" col-sm-8  col-md-8 ">
-                                    <button (click)="submit()"class="btn btn-primary " type="submit">Submit</button>
+                                    <button (click)="submit()"class="btn btn-primary "type="submit">Submit</button>
+                                    
+                                    <p style="color:red">{{message}}</p>
                                 </div>
                             </div>
                         </form>
@@ -124,19 +126,19 @@
                 });
 
                 
-               $(document).on("click",".add-gallery .plus-btn",function() {
-                $('.add-gallery .gal-box').append('\
-                  <div class="gal-img">\
-                  <div class="img-view">\
-                  <img src="assets/images/gallery/chair.jpg" class="gal-result">\
-                  </div>\
-                  <input type="file" class="gal-file">\
-                  <div class="del">x</div>\
-                </div>');
-                  $(".del").on('click',function(){
-                    $(this).parent('.gal-img').remove();
-                  });
-              });
+              //  $(document).on("click",".add-gallery .plus-btn",function() {
+              //   $('.add-gallery .gal-box').append('\
+              //     <div class="gal-img">\
+              //     <div class="img-view">\
+              //     <img src="assets/images/gallery/chair.jpg" class="gal-result">\
+              //     </div>\
+              //     <input (change)="found($event)" type="file" class="gal-file">\
+              //     <div class="del">x</div>\
+              //   </div>');
+              //     $(".del").on('click',function(){
+              //       $(this).parent('.gal-img').remove();
+              //     });
+              // });
             });
             </script>
 

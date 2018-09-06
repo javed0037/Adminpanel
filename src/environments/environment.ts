@@ -5,10 +5,10 @@
 export const environment = {
   production: false,
 
-  appName: 'LikeMinded-Admin',
-  footer:'LikeMinded',
-   //baseUrl: 'http://localhost:5000/'
-    baseUrl:'http://18.219.244.162:5000/'
+  appName: 'Jurnlong',
+  footer:'Jurnlong',
+   //baseUrl: 'http://localhost:5000'
+   baseUrl:'http://18.219.244.162:5000'
 
 };
 

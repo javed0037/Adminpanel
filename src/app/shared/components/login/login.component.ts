@@ -15,29 +15,31 @@ export class LoginComponent implements OnInit {
   processing = false;
   form: FormGroup;
   previousUrl;
+  FormControl;
   public loading = false;
 
 
   constructor(
     private formBuilder: FormBuilder,
+    // private formcontrol: FormControl,
     private authService: AuthService,
     private router: Router,
   ) 
   
-  {this.createForm(); }
+  { }
 
 
     // Function to create registration form
-    createForm() {
-      this.form = this.formBuilder.group({
-        // Email Input
-        email: ['', ],
+    // createForm() {
+    //   this.form = this.formBuilder.group({
+    //     // Email Input
+    //     email: ['', Validators.required ],
        
-        // Password Input
-        password: [''],
+    //     // Password Input
+    //     password: ['', Validators.required],
        
-      }); 
-    }
+    //   }); 
+    // }
       onLoginsubmit() {
         this.processing = true;
         // this.enableForm(); // Re-enable form
@@ -48,9 +50,10 @@ export class LoginComponent implements OnInit {
         this.authService
           .login(user)
           .subscribe(data => {
-       console.log(data.data._id,"theeeeeeeeeeeeee")
+       console.log(data.data._id,'theeeeeeeeeeeeee')
                   this.messageClass = 'alert alert-success';
                   this.message = data.message;
+                  this.authService.setToken('fake');
                   this.authService.storeUserData(data.data._id);
                   setTimeout(() => {
                     if (this.previousUrl) {
@@ -62,18 +65,29 @@ export class LoginComponent implements OnInit {
             }, error=> {
 let err= JSON.parse(error._body).message;
 
-       if(error) this.message = error['message'];
-       else this.message = 'Something went wrong';
-                  this.messageClass = 'alert alert-danger'; 
+             if(error) this.message = error['message'];
+               else this.message = 'Something went wrong';
+                  this.messageClass = 'alert alert-danger';
                   this.message = err; 
-                  // this.processing = false; 
-                
+                  // this.processing = false;
               
             });
       }
   
   ngOnInit() {
-   
+
+    if(this.authService.isLoggedIn()){
+      this.router.navigate(['/dashboard'])
+    }
+
+    this.form = this.formBuilder.group({
+      // Email Input
+      email: ['', Validators.required ],
+     
+      // Password Input
+      password: ['', Validators.required],
+     
+    }); 
   
 
   }
